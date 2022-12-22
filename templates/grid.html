@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <style>
+
+    .column {
+    float: left;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form method="post" action="/"><h1><input name="home" value="home" type="image" src="./static/image2.png"></h1>
+</form>
+<div class="column" style="width:30%">
+    <form method="post" action="/animelist">
+        <input id="search" type="text" name="search" placeholder="MAL USERNAME">
+        <button style="background-color:green; color:white" type="submit" name="go" value="go">SEARCH ANIME LIST </button>
+    </form>
+    <p>{{mal_username}}</p>
+    <textarea style="resize:none" cols="25" rows="5">{{anime_list}}</textarea><br>
+    <p>{{valid_files}}</p>
+
+
+<form method="post" action="/make_grid">
+        <button style="background-color:green; color:white" type="submit" name="button-regrid" value="button-regrid">REGRID </button>
+
+    <br>
+
+     <label > Number of columns</label>
+     <input   id="col" type="text" name="col" placeholder="8" value= "8" style="width: 50px;" align="left">
+    <br>
+     <label > Number of rows</label>
+     <input  id="row" type="text" name="row" placeholder="4" value="4" style="width: 50px;" align="left">
+<br>
+     <label > Grid size</label>
+     <input id="grid" type="text" name="grid" placeholder="100" value="100" style="width: 50px;"  align="left">
+<br>
+     <label > Image padding</label>
+     <input  id="padding" type="text" name="padding" placeholder="50" value="50" style="width: 50px;" align="left">
+<br>
+    <label > Padding color</label>
+    <input  id="padding-color" type="text" name="padding-color" placeholder="white" value="black" style="width: 50px;" align="left">
+ <br>
+     <label > Tile padding</label>
+     <input  id="padding-cells" type="text" name="padding-cells" placeholder="5" value="5" style="width: 50px;" align="left">
+ <br>
+ <label > Tile padding color</label>
+ <input  id="padding-cells-color" type="text" name="padding-cells-color" placeholder="yellow" value="white" style="width: 50px;"  align="left">
+ </form>
+</div>
+
+    <div class="column" style="width:70%"><img  src="{{grid_image}}" ></div>
+
+</body>
+
+</html>
+
